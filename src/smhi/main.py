@@ -17,6 +17,7 @@ def main():
     args = parser.parse_args()
     if args.parameters:
         smhi_api.display_parameters()
+        print(smhi_api.get_active_stations())
 
 
 if __name__ == "__main__":
