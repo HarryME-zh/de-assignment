@@ -1,5 +1,7 @@
+import asyncio
 import xml.etree.ElementTree as ET
 
+import aiohttp
 import requests
 
 
@@ -72,27 +74,52 @@ class SMHIDataAPI:
             print(f"Failed to fetch station data: {response.status_code}")
             return None
 
-    def get_daily_temperature(self):
-        """Fetch temperature info from SMHI api."""
+    async def _fetch_station_temp(self, session, station):
+        """Async fetch daily temperature of a station"""
+        station_name = station["name"]
+        station_id = station["id"]
+        station_daily_temp_url = (
+            f"{self.base_url}/parameter/2/station/{station_id}"
+            "/period/latest-day/data.json"
+        )
+
+        async with session.get(station_daily_temp_url) as response:
+            if response.status == 200:
+                station_temp_info = await response.json()
+                if station_temp_info.get("value"):
+                    temperature = float(station_temp_info["value"][0]["value"])
+                    return {station_name: temperature}
+            return {}
+
+    async def get_daily_temperature(self):
+        """Call api to get daily temperatures of avaliable stations."""
         stations = self._get_station_data()
         stations_daily_temp = {}
 
         if stations:
-            for station in stations:
-                station_name = station["name"]
-                station_id = station["id"]
+            async with aiohttp.ClientSession() as session:
+                tasks = [
+                    self._fetch_station_temp(session, station) for station in stations
+                ]
+                results = await asyncio.gather(*tasks)
+                for result in results:
+                    if result:
+                        stations_daily_temp.update(result)
 
-                station_daily_temp_url = (
-                    f"{self.base_url}/parameter/2/station/{station_id}"
-                    "/period/latest-day/data.json"
-                )
-
-                # Fetch station-specific data
-                station_response = requests.get(station_daily_temp_url)
-                if station_response.status_code == 200:
-                    station_temp_info = station_response.json()
-                    # Check if latest-day is in the period
-                    if station_temp_info.get("value"):
-                        temperature = float(station_temp_info["value"][0]["value"])
-                        stations_daily_temp.update({station_name: temperature})
         return stations_daily_temp
+
+    async def display_temperature_info(self):
+        """Display the highest and lowest temperatures."""
+        stations_daily_temp = await self.get_daily_temperature()
+
+        if stations_daily_temp:
+            highest_station = max(stations_daily_temp, key=stations_daily_temp.get)
+            lowest_station = min(stations_daily_temp, key=stations_daily_temp.get)
+
+            highest_temp = stations_daily_temp[highest_station]
+            lowest_temp = stations_daily_temp[lowest_station]
+
+            print(f"Highest temperature: {highest_station}, {highest_temp} degrees")
+            print(f"Lowest temperature: {lowest_station}, {lowest_temp} degrees")
+        else:
+            print("No temperature data available.")
