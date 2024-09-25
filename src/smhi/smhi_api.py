@@ -30,14 +30,19 @@ class SMHIDataAPI:
         try:
             root = ET.fromstring(xml_data)
             namespace = {"atom": "http://www.w3.org/2005/Atom"}
-            parameters = []
+            parameters = {}
 
             for entry in root.findall("atom:entry", namespace):
                 title = entry.find("atom:title", namespace).text
                 summary = entry.find("atom:summary", namespace).text
-                parameters.append(f"{title} ({summary})")
+                link = entry.find('atom:link[@type="application/json"]', namespace)
+                # Extract the index from the href (e.g., parameter/27.json -> index = 27)
+                href = link.attrib.get("href", "")
+                key = href.split("/")[-1].replace(".json", "") if href else "Unknown"
 
-            return parameters
+                parameters.update({int(key): f"{title} ({summary})"})
+            parameters_sorted = dict(sorted(parameters.items()))
+            return parameters_sorted
         except ET.ParseError as e:
             print(f"Error parsing XML: {e}")
             return []
@@ -51,7 +56,7 @@ class SMHIDataAPI:
             # Parse and extract parameters
             parameters = self.parse_smhi_parameters(xml_data)
 
-            for idx, param in enumerate(parameters, 1):
-                print(f"{idx}. {param}")
+            for key, param in parameters.items():
+                print(f"{key}. {param}")
         else:
             print("Failed to retrieve data from the SMHI API.")
