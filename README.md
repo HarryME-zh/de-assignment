@@ -83,7 +83,7 @@ API Call:
 
 ## Exercise 3 - Unit Tests
 
-Unit tests for functions inside class SMHIDataAPI.
+Unit tests for functions in class SMHIDataAPI.
 
 #### Example Usage
 
@@ -121,7 +121,7 @@ TOTAL                     81      4     24      3    93%
 
 ## Troubleshooting
 
-If an SSL certificate verification error occurs (`SSL: CERTIFICATE_VERIFY_FAILED`), usually on windows machine, try to solve it by installing the package `pip-system-certs`
+If an SSL certificate verification error occurs (`SSL: CERTIFICATE_VERIFY_FAILED`), usually on windows machine, it can be solved by installing the package `pip-system-certs`
 
 ````
 $ python3 -m pip install pip-system-certs
