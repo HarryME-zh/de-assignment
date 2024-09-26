@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title>1.0 versionen av nedladdningstjänsten: Välj parameter (sedan station och tidsutsnitt)</title>
+  <link rel="self" type="application/atom+xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0.atom" title="1.0 versionen av nedladdningstjänsten: Välj parameter (sedan station och tidsutsnitt)" />
+  <link rel="up" type="application/atom+xml" href="https://opendata-download-metobs.smhi.se/api.atom" title="1.0 versionen av nedladdningstjänsten: Välj parameter (sedan station och tidsutsnitt)" />
+  <link rel="enclosure" type="application/json" href="https://opendata-download-metobs.smhi.se/api/version/1.0.json" title="1.0 versionen av nedladdningstjänsten: Välj parameter (sedan station och tidsutsnitt)" />
+  <link rel="enclosure" type="application/xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0.xml" title="1.0 versionen av nedladdningstjänsten: Välj parameter (sedan station och tidsutsnitt)" />
+  <link rel="describedby" type="application/vnd.iso.19139+xml" href="https://opendata-catalog.smhi.se/md/25080190-38ba-4279-a65d-d9ef8d0bf949" title="1.0 versionen av nedladdningstjänsten: Välj parameter (sedan station och tidsutsnitt)" />
+  <author>
+    <name>SMHI - Open Data</name>
+    <email>dataleveranser@smhi.se</email>
+  </author>
+  <subtitle />
+  <id>https://opendata-download-metobs.smhi.se/api/version/1.0.atom</id>
+  <rights>Copyright (c) 2013, SMHI; all rights reserved</rights>
+  <updated>2024-09-26T08:00:00Z</updated>
+  <dc:date>2024-09-26T08:00:00Z</dc:date>
+  <dc:rights>Copyright (c) 2013, SMHI; all rights reserved</dc:rights>
+  <entry>
+    <title>Byvind</title>
+    <link rel="enclosure" type="application/atom+xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/21.atom" title="Byvind" />
+    <link rel="enclosure" type="application/json" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/21.json" title="Byvind" />
+    <link rel="enclosure" type="application/xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/21.xml" title="Byvind" />
+    <link rel="describedby" type="application/vnd.iso.19139+xml" href="https://opendata-catalog.smhi.se/md/617a59fa-087b-4416-83df-486b85dcb1ed" title="Byvind" />
+    <author>
+      <name>SMHI - Open Data</name>
+      <email>dataleveranser@smhi.se</email>
+    </author>
+    <id>https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/21.atom</id>
+    <updated>2024-09-26T08:00:00Z</updated>
+    <published>2024-09-26T08:00:00Z</published>
+    <summary type="text">max, 1 gång/tim</summary>
+    <dc:date>2024-09-26T08:00:00Z</dc:date>
+  </entry>
+  <entry>
+    <title>Daggpunktstemperatur</title>
+    <link rel="enclosure" type="application/atom+xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/39.atom" title="Daggpunktstemperatur" />
+    <link rel="enclosure" type="application/json" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/39.json" title="Daggpunktstemperatur" />
+    <link rel="enclosure" type="application/xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/39.xml" title="Daggpunktstemperatur" />
+    <link rel="describedby" type="application/vnd.iso.19139+xml" href="https://opendata-catalog.smhi.se/md/45970e30-c8a4-11e9-87e3-097244ef907f" title="Daggpunktstemperatur" />
+    <author>
+      <name>SMHI - Open Data</name>
+      <email>dataleveranser@smhi.se</email>
+    </author>
+    <id>https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/39.atom</id>
+    <updated>2024-09-26T08:00:00Z</updated>
+    <published>2024-09-26T08:00:00Z</published>
+    <summary type="text">momentanvärde, 1 gång/tim</summary>
+    <dc:date>2024-09-26T08:00:00Z</dc:date>
+  </entry>
+  <entry>
+    <title>Global Irradians (svenska stationer)</title>
+    <link rel="enclosure" type="application/atom+xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/11.atom" title="Global Irradians (svenska stationer)" />
+    <link rel="enclosure" type="application/json" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/11.json" title="Global Irradians (svenska stationer)" />
+    <link rel="enclosure" type="application/xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/11.xml" title="Global Irradians (svenska stationer)" />
+    <link rel="describedby" type="application/vnd.iso.19139+xml" href="https://opendata-catalog.smhi.se/md/a71f56f5-da58-476d-8866-67937e260b4f" title="Global Irradians (svenska stationer)" />
+    <author>
+      <name>SMHI - Open Data</name>
+      <email>dataleveranser@smhi.se</email>
+    </author>
+    <id>https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/11.atom</id>
+    <updated>2024-09-26T08:00:00Z</updated>
+    <published>2024-09-26T08:00:00Z</published>
+    <summary type="text">medelvärde 1 timma, varje timme</summary>
+    <dc:date>2024-09-26T08:00:00Z</dc:date>
+  </entry>
+  <entry>
+    <title>Lufttemperatur</title>
+    <link rel="enclosure" type="application/atom+xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/22.atom" title="Lufttemperatur" />
+    <link rel="enclosure" type="application/json" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/22.json" title="Lufttemperatur" />
+    <link rel="enclosure" type="application/xml" href="https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/22.xml" title="Lufttemperatur" />
+    <link rel="describedby" type="application/vnd.iso.19139+xml" href="https://opendata-catalog.smhi.se/md/9c6a50fb-d491-48d2-b94e-d9b43f29470d" title="Lufttemperatur" />
+    <author>
+      <name>SMHI - Open Data</name>
+      <email>dataleveranser@smhi.se</email>
+    </author>
+    <id>https://opendata-download-metobs.smhi.se/api/version/1.0/parameter/22.atom</id>
+    <updated>2024-09-26T00:00:00Z</updated>
+    <published>2024-09-26T00:00:00Z</published>
+    <summary type="text">medel, 1 gång per månad</summary>
+    <dc:date>2024-09-26T00:00:00Z</dc:date>
+  </entry>
+</feed>

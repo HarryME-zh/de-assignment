@@ -39,7 +39,7 @@ class SMHIDataAPI:
                 title = entry.find("atom:title", namespace).text
                 summary = entry.find("atom:summary", namespace).text
                 link = entry.find('atom:link[@type="application/json"]', namespace)
-                # Extract the index from the href (e.g., parameter/27.json -> index = 27)
+                # Extract the index from the href (e.g., parameter/2.json -> key = 2)
                 href = link.attrib.get("href", "")
                 key = href.split("/")[-1].replace(".json", "") if href else "Unknown"
 
@@ -52,13 +52,10 @@ class SMHIDataAPI:
 
     def display_parameters(self):
         """Fetch and display parameters from the SMHI API."""
-        # Fetch XML data
         xml_data = self._fetch_smhi_parameters()
 
         if xml_data:
-            # Parse and extract parameters
             parameters = self._parse_smhi_parameters(xml_data)
-
             for key, param in parameters.items():
                 print(f"{key}. {param}")
         else:
